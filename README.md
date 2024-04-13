@@ -32,6 +32,16 @@ SlideNovaは、Markdownからモダンで美しいスライドを簡単に作成
 [Slidev](https://sli.dev/)を使用しており、スライドの生成はDockerコンテナ内で行われます。
 Streamlitを使用した直感的なユーザーインターフェイスで、Markdownを入力するだけですぐにスライドを作成できます。
 
+## 更新情報
+
+### [2024/04/13] SlideNova v0.1.0 [リリースノート](https://github.com/Sunwood-ai-labs/SlideNova/releases/tag/v0.1.0)
+- Markdownからスライド生成するWebアプリの公開
+- Dockerを使った環境構築の自動化
+- Streamlitによる直感的なユーザーインターフェイス
+- スライドのダウンロード機能
+- ドキュメントの拡充
+- 開発環境の整備とGitHub Actionsの設定
+
 ## 🌟 主な特徴
 
 - 📝 Markdownでスライド作成
