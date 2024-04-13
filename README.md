@@ -1,3 +1,15 @@
+---
+title: SlideNova
+emoji: 🐠
+colorFrom: indigo
+colorTo: green
+sdk: docker
+pinned: false
+license: mit
+app_port: 8501
+---
+
+
 
 <p align="center">
 <img src="https://media.githubusercontent.com/media/Sunwood-ai-labs/SlideNova/develop/docs/SlideNova_icon.png" width="100%">
@@ -56,6 +68,12 @@ docker-compose up --build
 1. Markdownエディタにスライドのコンテンツを入力します。
 2. 「Generate Slides」ボタンをクリックします。
 3. 生成されたスライドが表示されます。
+
+## Develop command
+
+```bash
+yes | npx slidev export temp.md --format png --output slides/out/ --dark -t
+```
 
 ## 📖 ドキュメント
 

@@ -12,20 +12,20 @@ RUN apt-get update && apt-get install -y python3 python3-pip
 # 作業ディレクトリの設定
 WORKDIR /app
 
-# Slidevのインストール
 RUN npm install -g @slidev/cli@latest
-RUN npm install -D playwright-chromium
 RUN npx playwright install-deps
 RUN npx playwright install
+RUN chown -R user:user /app
+RUN chown -R user:user /usr/local/lib/node_modules/@slidev/
+USER user
 
-# Pythonスクリプトのコピー
-COPY run_slidev.py .
+# Slidevのインストール
+RUN npm install -D playwright-chromium
 
 # スライドディレクトリの作成
 RUN mkdir slides
 
-RUN chown -R user:user /app
-RUN chown -R user:user /usr/local/lib/node_modules/@slidev/
+
 
 USER user
 
