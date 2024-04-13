@@ -8,6 +8,7 @@ def main():
 
     # マークダウンファイルの内容を入力するテキストエリア
     markdown_text = st.text_area("Enter your markdown content here:", height=400)
+    # os.remove("/app/slides/out/*")
 
     # スライドを生成するボタン
     if st.button("Generate Slides"):
@@ -16,7 +17,7 @@ def main():
             f.write(markdown_text)
 
         # slidevコマンドを実行してスライドを生成
-        subprocess.run(["npx", "slidev", "export", "temp.md", "--format", "png", "--output", "slides/out/", "--dark", "-t"])
+        subprocess.run(["yes", "|", "npx", "slidev", "export", "temp.md", "--format", "png", "--output", "slides/out/", "--dark", "-t"])
 
         # 生成されたスライドを表示
         slides = []

@@ -26,4 +26,10 @@ RUN mkdir slides
 
 RUN chown -R user:user /app
 RUN chown -R user:user /usr/local/lib/node_modules/@slidev/
+
 USER user
+
+RUN pip install streamlit --break-system-packages
+ENV PATH="/home/user/.local/bin:${PATH}"
+
+CMD ["python3", "-m", "streamlit", "run", "app.py"]
