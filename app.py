@@ -1,38 +1,35 @@
+# app.py
 import streamlit as st
-from marp import Marp
-import base64
-from io import BytesIO
+import os
+import subprocess
 
 def main():
-    st.title("Marp Slide Generator")
-    
-    # マークダウン入力欄
-    markdown_text = st.text_area("Enter your markdown text here:", height=400)
-    
+    st.title("Markdown to Slidev")
+
+    # マークダウンファイルの内容を入力するテキストエリア
+    markdown_text = st.text_area("Enter your markdown content here:", height=400)
+
+    # スライドを生成するボタン
     if st.button("Generate Slides"):
-        # Marpオブジェクトの作成
-        marp = Marp()
-        
-        # マークダウンからスライドを生成
-        slides = marp.convert(markdown_text)
-        
-        # スライドを画像に変換
-        images = []
+        # 一時ファイルにマークダウンの内容を書き込む
+        with open("temp.md", "w") as f:
+            f.write(markdown_text)
+
+        # slidevコマンドを実行してスライドを生成
+        subprocess.run(["npx", "slidev", "export", "temp.md", "--format", "png", "--output", "slides/out/", "--dark", "-t"])
+
+        # 生成されたスライドを表示
+        slides = []
+        for filename in os.listdir("slides/out"):
+            if filename.endswith(".png"):
+                slides.append(filename)
+        slides.sort()
+
         for slide in slides:
-            image_data = slide.render(format="png")
-            images.append(image_data)
-        
-        # 画像を表示
-        st.subheader("Generated Slides")
-        for i, image in enumerate(images):
-            st.image(image, caption=f"Slide {i+1}", use_column_width=True)
-            
-            # 画像をダウンロード可能なリンクとして提供
-            buffered = BytesIO()
-            image.save(buffered, format="PNG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            href = f'<a href="data:file/png;base64,{img_str}" download="slide_{i+1}.png">Download Slide {i+1}</a>'
-            st.markdown(href, unsafe_allow_html=True)
+            st.image(f"slides/out/{slide}")
+
+        # 一時ファイルを削除
+        os.remove("temp.md")
 
 if __name__ == "__main__":
     main()
