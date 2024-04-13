@@ -13,10 +13,14 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Git LFS Pull
+      - name: Install and configure Git LFS
         run: |
           git lfs install
-          git lfs pull
+          git config --global lfs.fetchinclude "*"
+      - name: Fetch all LFS objects
+        run: git lfs fetch --all
+      - name: Checkout LFS objects
+        run: git lfs checkout
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
