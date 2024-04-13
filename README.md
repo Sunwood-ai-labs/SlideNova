@@ -23,6 +23,7 @@ app_port: 8501
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Sunwood-ai-labs/SlideNova)](https://github.com/Sunwood-ai-labs/SlideNova)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/Sunwood-ai-labs/SlideNova)](https://github.com/Sunwood-ai-labs/SlideNova)
 [![GitHub Release](https://img.shields.io/github/v/release/Sunwood-ai-labs/SlideNova?sort=date&color=red)](https://github.com/Sunwood-ai-labs/SlideNova)
+[![GitHub Tag](https://img.shields.io/github/v/tag/Sunwood-ai-labs/SlideNova?color=orange)](https://github.com/Sunwood-ai-labs/SlideNova)
 </h3>
 </p>
 

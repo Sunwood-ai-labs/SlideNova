@@ -29,8 +29,6 @@ RUN yes | npx slidev export slides/demo.md --format png --output slides/out/ --d
 RUN npm install
 
 
-USER user
-
 RUN pip install streamlit --break-system-packages
 ENV PATH="/home/user/.local/bin:${PATH}"
 
