@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+  slidev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./slides:/app/slides
+    ports:
+      - "3030:3030"
+      - "8502:8501"
+    tty: true
+    user: user
