@@ -20,16 +20,19 @@ RUN chown -R user:user /usr/local/lib/node_modules/@slidev/
 USER user
 
 # Slidevのインストール
+
 RUN npm install -D playwright-chromium
+RUN npm install @slidev/theme-seriph
 
-# スライドディレクトリの作成
-RUN mkdir slides
-
+COPY --chown=user:user . /app
+RUN yes | npx slidev export slides/demo.md --format png --output slides/out/ --dark
+RUN npm install
 
 
 USER user
 
 RUN pip install streamlit --break-system-packages
 ENV PATH="/home/user/.local/bin:${PATH}"
+
 
 CMD ["python3", "-m", "streamlit", "run", "app.py"]

@@ -72,7 +72,7 @@ docker-compose up --build
 ## Develop command
 
 ```bash
-yes | npx slidev export temp.md --format png --output slides/out/ --dark -t
+yes | npx slidev export slides/demo.md --format png --output slides/out/ --dark
 ```
 
 ## 📖 ドキュメント
