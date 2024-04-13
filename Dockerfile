@@ -1,6 +1,5 @@
 # Dockerfile
 FROM node:18
-
 USER root
 RUN useradd -m -u 1001 user
 WORKDIR /app
@@ -18,7 +17,6 @@ RUN npx playwright install
 RUN chown -R user:user /app
 RUN chown -R user:user /usr/local/lib/node_modules/@slidev/
 USER user
-
 # Slidevのインストール
 
 RUN npm install -D playwright-chromium
@@ -29,8 +27,13 @@ RUN yes | npx slidev export slides/demo.md --format png --output slides/out/ --d
 RUN npm install
 
 
-RUN pip install streamlit --break-system-packages
+RUN pip3 install streamlit --break-system-packages
 ENV PATH="/home/user/.local/bin:${PATH}"
-
+USER root
+RUN pip3 install streamlit --break-system-packages
+RUN chmod 777 -R /app
+RUN chmod 777 -R /usr/local/lib/node_modules/@slidev/
+USER node
+RUN npx playwright install 
 
 CMD ["python3", "-m", "streamlit", "run", "app.py"]
