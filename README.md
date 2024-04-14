@@ -29,7 +29,7 @@ app_port: 8501
 
 ## 🚀 はじめに
 
-[SlideNova](docs\SlideNova.md)は、生成AIを活用することを前提とした革新的なMarkdownベースのスライド作成Webアプリケーションです。生成AIとの連携により、効率的かつ高品質なスライド作成を実現します。
+[SlideNova](https://github.com/Sunwood-ai-labs/SlideNova/blob/develop/docs/SlideNova.md)は、生成AIを活用することを前提とした革新的なMarkdownベースのスライド作成Webアプリケーションです。生成AIとの連携により、効率的かつ高品質なスライド作成を実現します。
 
 ## 更新情報
 
@@ -90,7 +90,7 @@ SlideNovaを使用するには、DockerとDocker Composeが必要です。以下
 
 ## 📖 ドキュメント
 
-より詳細な情報や[SlideNova](docs\SlideNova.md)の機能については、[ドキュメント](docs\SlideNova.md)を参照してください。
+より詳細な情報や[SlideNova]の機能については、[ドキュメント](https://github.com/Sunwood-ai-labs/SlideNova/blob/develop/docs/SlideNova.md)を参照してください。
 
 ## 🤝 コントリビューション
 
