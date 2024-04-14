@@ -33,6 +33,14 @@ app_port: 8501
 
 ## 更新情報
 
+### [2024/04/14] SlideNova v0.6.0 [リリースノート](https://github.com/Sunwood-ai-labs/SlideNova/releases/tag/v0.6.0)
+- [Hugging Face Spacesでのアプリ公開](https://huggingface.co/spaces/MakiAi/SlideNova)
+- スライドのダウンロード機能の改善
+- ユーザーインターフェイスの改善
+- ドキュメントの拡充とリンクの最適化
+- 開発環境の改善とGitHub Actionsの設定
+- プロジェクトアイコンの追加とREADMEの見た目の向上
+
 ### [2024/04/13] SlideNova v0.1.0 [リリースノート](https://github.com/Sunwood-ai-labs/SlideNova/releases/tag/v0.1.0)
 - Markdownからスライド生成するWebアプリの公開
 - Dockerを使った環境構築の自動化
@@ -40,7 +48,7 @@ app_port: 8501
 - スライドのダウンロード機能
 - ドキュメントの拡充
 - 開発環境の整備とGitHub Actionsの設定
-
+- 
 ## ✨ 主な特徴
 
 - 📝 **Markdownでのスライド作成**: Markdownの簡潔で直感的な記法を使ってスライドのコンテンツを作成できます。
