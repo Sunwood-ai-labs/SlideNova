@@ -29,11 +29,17 @@ app_port: 8501
 
 ## 🚀 はじめに
 
-SlideNovaは、Markdownからモダンで美しいスライドを簡単に作成できるWebアプリケーションです。
-[Slidev](https://sli.dev/)を使用しており、スライドの生成はDockerコンテナ内で行われます。
-Streamlitを使用した直感的なユーザーインターフェイスで、Markdownを入力するだけですぐにスライドを作成できます。
+[SlideNova](https://github.com/Sunwood-ai-labs/SlideNova/blob/develop/docs/SlideNova.md)は、生成AIを活用することを前提とした革新的なMarkdownベースのスライド作成Webアプリケーションです。生成AIとの連携により、効率的かつ高品質なスライド作成を実現します。
 
 ## 更新情報
+
+### [2024/04/14] SlideNova v0.6.0 [リリースノート](https://github.com/Sunwood-ai-labs/SlideNova/releases/tag/v0.6.0)
+- [Hugging Face Spacesでのアプリ公開](https://huggingface.co/spaces/MakiAi/SlideNova)
+- スライドのダウンロード機能の改善
+- ユーザーインターフェイスの改善
+- ドキュメントの拡充とリンクの最適化
+- 開発環境の改善とGitHub Actionsの設定
+- プロジェクトアイコンの追加とREADMEの見た目の向上
 
 ### [2024/04/13] SlideNova v0.1.0 [リリースノート](https://github.com/Sunwood-ai-labs/SlideNova/releases/tag/v0.1.0)
 - Markdownからスライド生成するWebアプリの公開
@@ -42,57 +48,61 @@ Streamlitを使用した直感的なユーザーインターフェイスで、Ma
 - スライドのダウンロード機能
 - ドキュメントの拡充
 - 開発環境の整備とGitHub Actionsの設定
+- 
+## ✨ 主な特徴
 
-## 🌟 主な特徴
+- 📝 **Markdownでのスライド作成**: Markdownの簡潔で直感的な記法を使ってスライドのコンテンツを作成できます。
+- 🎨 **モダンなスライドデザイン**: Slidevを使用することで、洗練されたデザインのスライドを生成できます。
+- 🐳 **Dockerによる環境構築の簡易化**: Dockerを活用し、複雑な環境設定なしですぐに使い始められます。
+- 🖥️ **使いやすいWebUI**: Streamlitを採用した直感的なWebインターフェイスで、スムーズなスライド作成が可能です。
+- 💾 **スライドのダウンロード**: 作成したスライドをPDFまたは画像形式でダウンロードできます。
 
-- 📝 Markdownでスライド作成
-- 🎨 Slidevを使用したモダンなスライドデザイン
-- 🐳 Dockerによる環境構築の簡易化
-- 🖥️ Streamlitによる使いやすいWebUI
-
-## 📦 インストール
+## 🚀 はじめに
 
 SlideNovaを使用するには、DockerとDocker Composeが必要です。以下の手順に従ってください。
 
 1. このリポジトリをクローンします。
 
-```bash
-git clone https://github.com/Sunwood-ai-labs/SlideNova.git
-```
+   ```bash
+   git clone https://github.com/Sunwood-ai-labs/SlideNova.git
+   ```
 
 2. プロジェクトディレクトリに移動します。
 
-```bash
-cd SlideNova
-```
+   ```bash
+   cd SlideNova
+   ```
 
 3. Docker Composeを使用してSlideNovaを起動します。
 
-```bash
-docker-compose up --build
-```
+   ```bash
+   docker-compose up --build
+   ```
 
 4. ブラウザで `http://localhost:8502` を開きます。
 
 ## 🛠️ 使い方
 
-1. Markdownエディタにスライドのコンテンツを入力します。
-2. 「Generate Slides」ボタンをクリックします。
-3. 生成されたスライドが表示されます。
+1. Markdownエディタにスライドのコンテンツを入力します。Markdownの記法に従って、見出し、箇条書き、画像、コードブロックなどを使用してスライドを構成します。
 
-## Develop command
+2. 「Generate Slides」ボタンをクリックすると、入力したMarkdownに基づいてスライドが生成されます。
 
-```bash
-yes | npx slidev export slides/demo.md --format png --output slides/out/ --dark
-```
+3. 生成されたスライドが表示されます。スライドのデザインやレイアウトは自動的に最適化されます。
+
+4. 必要に応じて、スライドをPDFまたは画像形式でダウンロードすることができます。
+
+### 使用例
+
+- サンプルのMarkdownファイル: [`slides/demo.md`](slides/demo.md)
+- サンプルのスライド画像: [`slides/sample`](slides/sample)
 
 ## 📖 ドキュメント
 
-より詳細な情報は、[ドキュメント](docs/)を参照してください。
+より詳細な情報や[SlideNova]の機能については、[ドキュメント](https://github.com/Sunwood-ai-labs/SlideNova/blob/develop/docs/SlideNova.md)を参照してください。
 
 ## 🤝 コントリビューション
 
-コントリビューションは歓迎します！詳細は[コントリビューションガイド](CONTRIBUTING.md)を参照してください。
+SlideNovaはオープンソースプロジェクトであり、コミュニティからのコントリビューションを歓迎しています。バグ報告、機能リクエスト、プルリクエストなどを通じて、SlideNovaの改善にご協力ください。詳細は[コントリビューションガイド](CONTRIBUTING.md)を参照してください。
 
 ## 📜 ライセンス
 
@@ -100,4 +110,6 @@ yes | npx slidev export slides/demo.md --format png --output slides/out/ --dark
 
 ## 📧 お問い合わせ
 
-ご質問やご提案がありましたら、[Issue](https://github.com/Sunwood-ai-labs/SlideNova/issues)を作成してください。
+ご質問やご提案がありましたら、[Issue](https://github.com/Sunwood-ai-labs/SlideNova/issues)を作成してください。フィードバックは常に歓迎です！
+
+プレゼンテーションの未来を切り拓く SlideNova で、あなたのアイデアに命を吹き込みましょう！✨
