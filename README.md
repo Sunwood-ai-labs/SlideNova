@@ -50,6 +50,12 @@ Streamlitを使用した直感的なユーザーインターフェイスで、Ma
 - 🐳 Dockerによる環境構築の簡易化
 - 🖥️ Streamlitによる使いやすいWebUI
 
+## デモアプリ
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Sunwood-ai-labs/SlideNova)
+
+![alt text](docs/demo_image.png)
+
 ## 📦 インストール
 
 SlideNovaを使用するには、DockerとDocker Composeが必要です。以下の手順に従ってください。
@@ -80,7 +86,21 @@ docker-compose up --build
 2. 「Generate Slides」ボタンをクリックします。
 3. 生成されたスライドが表示されます。
 
+
+### example
+
+example markdown file
+[`slides/demo.md`](slides/demo.md)
+
+example slide image
+[`slides/sample`](slides/sample)
+
 ## Develop command
+
+
+```bash
+docker-compose exec slidev /bin/bash 
+```
 
 ```bash
 yes | npx slidev export slides/demo.md --format png --output slides/out/ --dark
